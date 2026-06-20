@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lo.Krain — Io</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <main class="player-shell">
+    <section class="player-card">
+      <div class="top-grid">
+        <div class="cover-wrap">
+          <img src="cover.jpg" alt="Io — Lo.Krain" class="album-cover" id="albumCover" />
+          <div class="vinyl"></div>
+        </div>
+
+        <div class="album-info">
+          <div class="album-label">ALBUM</div>
+          <h1 class="album-title">Io</h1>
+          <div class="album-meta">Lo.Krain · 2026</div>
+
+          <div class="now-playing-box">
+            <div class="now-label">Сейчас играет</div>
+            <div class="track-title" id="trackTitle">Путь</div>
+            <div class="track-artist" id="trackArtist">Lo.Krain</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-wrap" id="progressWrap">
+          <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+        </div>
+
+        <div class="time-row">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="control-btn" id="prevBtn" aria-label="Назад">⏮</button>
+        <button class="control-btn main-btn" id="playBtn" aria-label="Пуск / пауза">▶</button>
+        <button class="control-btn" id="nextBtn" aria-label="Вперёд">⏭</button>
+      </div>
+
+      <div class="sub-controls">
+        <button class="mini-btn" id="shuffleBtn">Shuffle: Off</button>
+        <button class="mini-btn" id="repeatBtn">Repeat: All</button>
+
+        <div class="volume-box">
+          <span>Vol</span>
+          <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" />
+        </div>
+      </div>
+
+      <div class="playlist-head">
+        <div class="playlist-title">Треки</div>
+        <div class="playlist-count" id="playlistCount">10 tracks</div>
+      </div>
+
+      <div class="playlist" id="playlist"></div>
+    </section>
+  </main>
+
+  <audio id="audio" preload="metadata"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
