@@ -1,2 +1,2 @@
-# lo-krain-io-player
-Album player for Io by Lo.Krain
+# lokrain-io
+Album Io by Lo.Krain
