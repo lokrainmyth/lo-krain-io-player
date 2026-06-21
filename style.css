@@ -99,20 +99,17 @@ body{
 }
 
 .cover-scene{
-  position:relative;
   width:100%;
-  aspect-ratio:1 / 1;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:visible;
+  margin-bottom:18px;
 }
 
 .cover-art{
-  position:relative;
-  z-index:3;
-  width:290px;
-  max-width:82%;
+  display:block;
+  width:100%;
+  max-width:340px;
   aspect-ratio:1 / 1;
   object-fit:cover;
   border-radius:22px;
@@ -121,57 +118,69 @@ body{
     0 0 0 1px rgba(255,255,255,.07);
 }
 
-.vinyl{
-  position:absolute;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%);
-  width:220px;
-  aspect-ratio:1 / 1;
-  border-radius:50%;
-  z-index:2;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at center, #111 0 15%, #1a1a1a 15% 23%, #101010 23% 34%, #191919 34% 52%, #111 52% 70%, #181818 70% 100%);
-  box-shadow:
-    0 18px 50px rgba(0,0,0,.42),
-    inset 0 0 0 1px rgba(255,255,255,.06);
+.artist-mini-card{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px;
+  border-radius:18px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.07);
+  margin-bottom:14px;
 }
 
-.vinyl-rings{
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  background:
-    repeating-radial-gradient(circle at center,
-      rgba(255,255,255,.08) 0 1px,
-      rgba(255,255,255,0) 1px 12px);
-  opacity:.24;
-}
-
-.vinyl-artist{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:62%;
-  height:62%;
-  transform:translate(-50%,-50%);
+.artist-mini-photo{
+  width:72px;
+  height:72px;
+  border-radius:18px;
   object-fit:cover;
-  border-radius:50%;
-  filter:grayscale(.08) brightness(.92) contrast(1.02);
-  opacity:.92;
+  display:block;
+  flex:0 0 auto;
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
 }
 
-.vinyl-hole{
-  position:absolute;
-  left:50%;
-  top:50%;
-  width:14%;
-  height:14%;
-  transform:translate(-50%,-50%);
-  border-radius:50%;
-  background:#0a0a0a;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+.artist-mini-info{
+  min-width:0;
+}
+
+.artist-mini-label{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--soft);
+  margin-bottom:6px;
+}
+
+.artist-mini-name{
+  font-size:16px;
+  font-weight:600;
+  color:var(--text);
+}
+
+.visual-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.visual-links a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  color:var(--text);
+  text-decoration:none;
+  transition:.2s ease;
+  backdrop-filter:blur(8px);
+}
+.visual-links a:hover{
+  transform:translateY(-1px);
+  background:rgba(255,255,255,.06);
+  border-color:rgba(255,255,255,.18);
 }
 
 .content-panel{
@@ -211,33 +220,6 @@ body{
   opacity:.92;
   line-height:1.75;
   font-size:16px;
-}
-
-.hero-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:22px;
-}
-
-.hero-links a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:42px;
-  padding:0 16px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(255,255,255,.03);
-  color:var(--text);
-  text-decoration:none;
-  transition:.2s ease;
-  backdrop-filter:blur(8px);
-}
-.hero-links a:hover{
-  transform:translateY(-1px);
-  background:rgba(255,255,255,.06);
-  border-color:rgba(255,255,255,.18);
 }
 
 .player-card{
@@ -531,13 +513,18 @@ body{
   }
 
   .cover-art{
-    width:min(72vw, 290px);
-    max-width:none;
+    max-width:100%;
   }
 
-  .vinyl{
-    width:min(52vw, 200px);
-    right:4px;
+  .artist-mini-card{
+    gap:12px;
+    padding:12px;
+  }
+
+  .artist-mini-photo{
+    width:64px;
+    height:64px;
+    border-radius:16px;
   }
 
   .player-head{
